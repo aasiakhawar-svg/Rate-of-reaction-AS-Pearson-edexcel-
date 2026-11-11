@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Topic 9A.1: Reaction Rate, Collision Theory and Activation Energy</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27><text y=%27.9em%27 font-size=%2790%27>💥</text></svg>">
+<style>
+:root{--bg:#f4f6fb;--card:#fff;--text:#1d2433;--muted:#5b6478;--line:#dfe3ee;--hero:#c62828;--c:#E67E22;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#10141f;--card:#1a2032;--text:#e8ecf7;--muted:#a3adc4;--line:#2c3550;--hero:#b71c1c;color-scheme:dark}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;font-size:16px}
+body.tm{font-size:21px}
+.wrap{max-width:900px;margin:auto;padding:14px 14px 90px}
+.hero{background:var(--hero);color:#fff;border-radius:18px;padding:18px 20px;border-left:70px solid #616161;position:relative}
+.hero b.n{position:absolute;left:-62px;top:16px;font-size:30px}
+.hero h1{margin:0;font-size:clamp(20px,5vw,30px);text-transform:uppercase}
+.hero p{margin:4px 0 0;color:#ffe082;font-size:14px}
+.hero .by{color:#fff;font-weight:bold;margin-top:8px;font-size:15px}
+.top{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:12px 0}
+.pill{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:5px 12px;font-weight:bold;font-size:14px}
+.tmb{margin-left:auto;background:#c62828;color:#fff;border:0;border-radius:20px;padding:8px 14px;font-weight:bold;cursor:pointer;font-size:14px}
+.tm .tmb{background:#37474f}
+.tabs{display:flex;gap:6px;flex-wrap:wrap}
+.tab{flex:1;min-width:140px;border:2px solid var(--c);background:var(--card);color:var(--text);border-radius:12px;padding:8px;font-weight:bold;cursor:pointer;font-size:13px}
+.tab.on{background:var(--c);color:#fff}
+.band{background:var(--c);color:#fff;border-radius:14px;padding:12px 16px;margin:14px 0 8px}
+.band h2{margin:0;font-size:1.3em}
+h3.s{margin:18px 0 6px;color:var(--c);font-size:1.05em;text-transform:uppercase}
+.lc,.q,.pk,.fg{background:var(--card);border:1px solid var(--line);border-left:8px solid var(--c);border-radius:12px;padding:10px 14px;margin-bottom:10px}
+.lc h3{margin:0 0 4px;font-size:1.02em;color:var(--c)}
+.lc ul{margin:0;padding-left:20px}
+.lc li{margin:3px 0}
+.tm .pt:not(.vis){visibility:hidden}
+.fg svg{width:100%;height:auto;max-height:300px}
+.fg small{display:block;color:var(--muted);text-align:center}
+.fls{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:10px}
+.fl{background:var(--c);color:#fff;border-radius:12px;padding:12px;cursor:pointer;min-height:92px}
+.fl span{display:none;margin-top:6px;background:rgba(255,255,255,.18);border-radius:8px;padding:6px 8px;font-size:.92em}
+.fl em{display:block;font-size:.8em;opacity:.85;margin-top:4px}
+.fl.open span{display:block}.fl.open em{display:none}
+.q p{margin:0 0 8px;font-weight:bold}
+.q p i{color:var(--c);font-style:normal}
+.opt{display:block;width:100%;text-align:left;margin:5px 0;padding:9px 12px;border:2px solid var(--line);background:var(--bg);color:var(--text);border-radius:10px;cursor:pointer;font-size:.95em}
+.opt.pick{border-color:var(--c)}
+.opt.ok{border-color:#27ae60;background:#e6f7ec;color:#14532d}
+.opt.no{border-color:#e74c3c;background:#fdeaea;color:#7f1d1d}
+.ex{display:none;margin-top:6px;padding:8px 12px;border-radius:8px;background:var(--bg);font-size:.92em}
+.ex.show{display:block}
+.rv{display:none;margin-top:4px;background:var(--c);color:#fff;border:0;border-radius:8px;padding:7px 12px;font-weight:bold;cursor:pointer}
+.tm .rv,.rv.always{display:inline-block}
+.sl{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin:6px 0}
+.sl input{flex:1;min-width:160px}
+.res{font-weight:bold;text-align:center;padding:6px;border-radius:8px;margin-top:4px}
+.bar{position:fixed;left:0;right:0;bottom:0;background:#37474f;color:#fff;display:none;gap:8px;justify-content:center;align-items:center;padding:10px 10px calc(10px + env(safe-area-inset-bottom,0px));z-index:5}
+.tm .bar{display:flex}
+.bar button{background:#fff;color:#37474f;border:0;border-radius:10px;padding:10px 16px;font-weight:bold;cursor:pointer;font-size:15px}
+footer{color:var(--muted);font-size:12px;text-align:center;margin:20px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+<div class="hero"><b class="n">9A</b><h1>Reaction rate, collision theory and activation energy</h1><p>Topic 9A.1 · Learn, picture it, recall, self-check</p><div class="by">Designed by Teacher Aasia Khawar</div></div>
+<div class="top"><span class="pill" id="sc">Self-check: 0 / 9</span><button class="tmb" id="tmb">👩‍🏫 Teacher mode (online class)</button></div>
+<div class="tabs" id="tabs"></div>
+<div id="panel"></div>
+<footer>Designed by Teacher Aasia Khawar · Concepts follow Topic 9A.1. Practice questions are original.</footer>
+</div>
+<div class="bar"><button onclick="go(-1)">◀ Back</button><span id="cnt">0 / 0</span><button onclick="go(1)">Next point ▶</button><button onclick="go(99)">Reveal all</button><button onclick="go(-99)">Reset</button></div>
+<script>
+const F=s=>s.replace(/~([^~]+)~/g,"<sub>$1</sub>").replace(/\^([^^]+)\^/g,"<sup>$1</sup>");
+const T=(x,y,t,o="")=>`<text x="${x}" y="${y}" font-size="11" fill="currentColor" ${o}>${t}</text>`;
+const FIG1=`<svg viewBox="0 0 320 200"><g stroke="currentColor" fill="none"><path d="M30 20V165H305" stroke-width="1.5"/></g>${T(8,14,"Concentration of product")}${T(285,182,"Time")}${T(22,178,"0")}
+<path d="M30 165C60 70 110 45 175 42S270 40 300 40" stroke="#e53935" stroke-width="3" fill="none"/>
+<line x1="30" y1="165" x2="95" y2="35" stroke="#1e88e5" stroke-width="2.5"/>${T(98,30,"initial rate = steepest tangent","fill='#1e88e5'")}
+<line x1="70" y1="95" x2="150" y2="52" stroke="#8e24aa" stroke-width="2.5"/><line x1="105" y1="165" x2="105" y2="62" stroke="#43a047" stroke-width="1.5" stroke-dasharray="4"/>${T(100,178,"t","fill='#43a047'")}${T(112,125,"rate at time t = gradient of the tangent","fill='#8e24aa'")}
+<line x1="190" y1="38" x2="300" y2="38" stroke="#1e88e5" stroke-width="2"/>${T(200,58,"end: gradient = 0","fill='#1e88e5'")}</svg>`;
+const FIG2=`<svg viewBox="0 0 320 200"><path d="M30 20V170H305" stroke="currentColor" stroke-width="1.5" fill="none"/>${T(8,14,"Energy")}${T(190,188,"Progress of reaction")}
+<path d="M30 140H90C120 140 125 45 160 45S200 115 230 115H300" stroke="#1e88e5" stroke-width="3" fill="none"/><line x1="90" y1="140" x2="90" y2="45" stroke="#e67e22" stroke-width="2"/><line x1="90" y1="45" x2="160" y2="45" stroke="#e67e22" stroke-dasharray="4"/>
+<polygon points="90,45 85,56 95,56" fill="#e67e22"/>${T(40,95,"E~a~".replace(/~a~/,"a"),"fill='#e67e22' font-weight='bold'")}${T(35,135,"reactants","")}${T(235,110,"products")}${T(95,38,"top of the barrier")}</svg>`;
+const mol=(x,y,h)=>`<circle cx="${x}" cy="${y}" r="9" fill="#78909c"/><circle cx="${x+34}" cy="${y}" r="9" fill="#78909c"/><line x1="${x+9}" y1="${y-2}" x2="${x+25}" y2="${y-2}" stroke="#fff" stroke-width="2"/><line x1="${x+9}" y1="${y+2}" x2="${x+25}" y2="${y+2}" stroke="#fff" stroke-width="2"/>`;
+const hb=(x,y,hTop)=>`<circle cx="${x}" cy="${y}" r="${hTop?6:11}" fill="${hTop?"#fdd835":"#ef6c00"}"/><circle cx="${x}" cy="${y+22}" r="${hTop?11:6}" fill="${hTop?"#ef6c00":"#fdd835"}"/>`;
+const FIG3=`<svg viewBox="0 0 330 190">
+<g>${T(20,16,"collision 1")}${mol(30,60)}<line x1="47" y1="110" x2="47" y2="75" stroke="#43a047" stroke-width="2.5"/>${hb(47,120,true)}${T(8,170,"H end first: may react ✔","fill='#43a047'")}</g>
+<g>${T(125,16,"collision 2")}${mol(130,60)}<line x1="147" y1="110" x2="147" y2="75" stroke="#e53935" stroke-width="2.5"/>${hb(147,120,false)}${T(118,170,"Br end first: bounce ✘","fill='#e53935'")}</g>
+<g>${T(235,16,"collision 3")}${mol(230,60)}<line x1="320" y1="62" x2="285" y2="62" stroke="#e53935" stroke-width="2.5"/>${hb(310,70,true)}${T(228,170,"side-on: bounce ✘","fill='#e53935'")}</g></svg>`;
+const CH=[
+{n:"1. Rate of reaction",c:"#E67E22",fig:[FIG1,"Product concentration against time: the gradient of a tangent is the rate."],
+learn:[
+["What is rate?",["Rate = change in concentration of a reactant or product ÷ time taken for the change.","Unit: mol dm^−3^ s^−1^ when concentration is in mol dm^−3^ and time in seconds.","Reactant used up, or product formed: either can be tracked."]],
+["Reading a concentration–time graph",["The gradient (slope) of the curve is the rate.","Draw a tangent at the point you need; gradient = y ÷ x (change in concentration ÷ change in time).","The tangent at time zero gives the initial rate, the steepest point.","The gradient becomes zero when the reaction is complete."]],
+["Rate from the time taken",["For a fixed amount of change, rate is proportional to 1 ÷ time.","Gas collected: rate = volume of gas ÷ time taken (cm^3^ s^−1^).","Example: 20.0 cm^3^ in 10 s gives 2.00 cm^3^ s^−1^; in 40 s gives 0.50 cm^3^ s^−1^. Four times as long means a quarter of the rate."]]],
+flip:[["Rate of reaction","Change in concentration (of reactant or product) per unit time."],["Initial rate","Rate at time zero: gradient of the tangent drawn at the start of the curve."],["Rate at a time t","Draw a tangent to the curve at t and calculate y ÷ x."],["Rate from time taken","rate = 1 ÷ time, or amount (e.g. gas volume) ÷ time."]],
+mcq:[["When concentration is in mol dm^−3^ and time in seconds, the unit of rate is:",["mol dm^−3^","mol dm^−3^ s^−1^","s mol^−1^","dm^3^ s^−1^"],1,"Rate = concentration change ÷ time, so mol dm^−3^ ÷ s = mol dm^−3^ s^−1^."],
+["20.0 cm^3^ of gas is collected in 40.0 s. The rate is:",["0.50 cm^3^ s^−1^","2.0 cm^3^ s^−1^","800 cm^3^ s^−1^","0.025 cm^3^ s^−1^"],0,"20.0 ÷ 40.0 = 0.50 cm^3^ s^−1^."],
+["How is the rate at a particular time found from a concentration–time graph?",["Read the concentration at that time","Measure the time at the end","Draw a tangent and find its gradient","Find the area under the curve"],2,"The gradient of the tangent at that point is the rate at that moment."]],
+oq:[["Why is the rate of a reaction zero at the end of the reaction?","All of the limiting reactant has been used up, so concentrations stop changing and the gradient of the graph is zero."],
+["Experiment A takes 25 s to collect a set volume of gas and experiment B takes 50 s. Compare the rates.","Rate ∝ 1 ÷ time, so A’s rate is twice B’s (1/25 = 0.040 s^−1^ against 1/50 = 0.020 s^−1^)."]]},
+{n:"2. Collision theory and E~a~",c:"#2980B9",fig:[FIG2,"Energy profile: only collisions with energy of at least E~a~ get over the barrier."],slider:true,
+learn:[
+["Particles must collide",["For A + B → C + D, molecules A and B first have to collide.","A collision may lead to reaction, but not every collision does."]],
+["Two requirements",["1. Enough energy: at least the activation energy E~a~.","2. The correct orientation when the particles meet.","Fail either one and the particles simply bounce apart."]],
+["Activation energy",["E~a~ = the minimum energy colliding particles must have for a reaction to occur.","Think of it as a barrier: only collisions with energy equal to or greater than E~a~ can get over it.","Reactions need some bonds broken first (energy in) before new bonds form (energy out). E~a~ is used to start breaking the original bonds."]]],
+flip:[["Activation energy, E~a~","The minimum energy that colliding particles must possess for a reaction to occur."],["Gentle collision","Not enough energy to start bond breaking, so the particles bounce apart."],["Why most collisions fail","Few collisions have energy ≥ E~a~, and many are in the wrong orientation."],["Bonds and energy","Breaking bonds needs energy; making new bonds releases energy."]],
+mcq:[["The minimum energy colliding particles need in order to react is the:",["enthalpy of formation","activation energy","lattice energy","ionisation energy"],1,"That is the definition of activation energy, E~a~."],
+["Two particles collide with less energy than E~a~. What happens?",["They react slowly","They bounce apart without reacting","They react only if heated","They form a catalyst"],1,"Without enough energy to start breaking bonds, there is no reaction."],
+["Why do most collisions between gas molecules NOT produce a reaction?",["Gas molecules never touch","Most collisions have too little energy or the wrong orientation","Gases have no activation energy","Collisions are too slow"],1,"Only a small fraction of collisions meet both requirements: energy ≥ E~a~ and correct orientation."]],
+oq:[["At room temperature there are enormous numbers of collisions in a gas every second, yet gas reactions are not over in a split second. Explain.","Only a tiny fraction of collisions have energy of at least E~a~ and the correct orientation, so successful collisions are rare."],
+["Many organic reactions must be heated under reflux for a long time. Suggest why.","Heating gives more particles energy ≥ E~a~, so more collisions are successful; because the fraction of successful collisions is still small, a long time is needed."],
+["A collision gives a combined energy of 5.0 × 10^−19^ J per pair. A reaction has E~a~ = 250 kJ mol^−1^. Is there enough energy? (L = 6.02 × 10^23^ mol^−1^)","Per mole: 5.0 × 10^−19^ × 6.02 × 10^23^ = 3.01 × 10^5^ J mol^−1^ = 301 kJ mol^−1^. This is above 250, so energy is sufficient (the reaction can occur if the orientation is also right)."]]},
+{n:"3. Orientation and steric hindrance",c:"#27AE60",fig:[FIG3,"Ethene + HBr: only the H end of HBr approaching the C=C may lead to reaction."],
+learn:[
+["Orientation",["Molecules must meet the right way round.","For ethene + HBr → bromoethane, the hydrogen end of H–Br must approach the C=C bond.","Any other approach (Br end first, or side-on to an H atom) just bounces off."]],
+["Steric hindrance",["Large atoms or groups in a molecule can get in the way of the attacking species.","Example: in (CH~3~)~3~CBr the three methyl groups are so large that water cannot get close to the δ+ carbon, so the mechanism is different from that of CH~3~Br.","This shape effect is called a steric factor; the slowing it causes is steric hindrance."]],
+["Putting it together",["A collision is successful only if it has energy ≥ E~a~ AND correct orientation.","Large groups can block correct orientation, lowering the chance of success."]]],
+flip:[["Orientation","The way two particles are positioned relative to each other when they collide."],["Steric hindrance","Slowing of a reaction because large groups in a molecule get in the way of the attacking species."],["Successful collision","Energy ≥ E~a~ and the correct orientation."],["Nucleophile","Attacks a δ+ carbon; blocked if bulky groups surround that carbon."]],
+mcq:[["For ethene to react with HBr, which part of HBr must approach the C=C bond?",["The bromine end","The hydrogen end","Either end equally","Neither: it must be side-on"],1,"The hydrogen end must approach the C=C; other collisions bounce off."],
+["Steric hindrance is best described as:",["a faster reaction caused by heat","slowing of a reaction because large groups block the attacking species","an increase in activation energy by a catalyst","the loss of electrons"],1,"Bulky groups physically get in the way of the attacker."],
+["Why can water not attack the δ+ carbon of (CH~3~)~3~CBr directly?",["The carbon is δ−","The three methyl groups are too large and block the approach","Water has no lone pairs","There is no C–Br bond"],1,"The bulky methyl groups prevent water getting close enough."]],
+oq:[["A collision has more energy than E~a~ but no reaction occurs. Suggest a reason.","The particles were in the wrong orientation (or large groups caused steric hindrance), so the right bonds could not be attacked."],
+["Explain the term ‘steric hindrance’, giving an example.","Large groups in a molecule block an attacking species and slow or change the reaction, e.g. the three methyl groups in (CH~3~)~3~CBr stop water approaching the carbon attached to Br."]]}];
+let cur=0,tm=false,step=0,pts=[];const res={};
+function tally(){document.getElementById("sc").textContent="Self-check: "+Object.values(res).filter(v=>v).length+" / 9"}
+function render(){const ch=CH[cur];document.documentElement.style.setProperty("--c",ch.c);
+ document.getElementById("tabs").innerHTML=CH.map((x,i)=>`<button class="tab ${i===cur?"on":""}" style="--c:${x.c}" onclick="sel(${i})">${F(x.n)}</button>`).join("");
+ let h=`<div class="band"><h2>${F(ch.n)}</h2></div><h3 class="s">① Learn it (teacher explains, you follow)</h3>`;
+ h+=ch.learn.map(l=>`<div class="lc"><h3>${F(l[0])}</h3><ul>${l[1].map(p=>`<li class="pt">${F(p)}</li>`).join("")}</ul></div>`).join("");
+ h+=`<h3 class="s">② Picture it</h3><div class="fg">${ch.fig[0]}<small>${F(ch.fig[1])}</small></div>`;
+ if(ch.slider)h+=`<div class="fg"><b>Try it: collision energy against E<sub>a</sub> (E<sub>a</sub> = 100 kJ mol<sup>−1</sup>)</b><div class="sl"><input type="range" id="en" min="0" max="200" value="60" oninput="sld()"><b id="ev">60 kJ mol⁻¹</b></div><div class="res" id="rs"></div></div>`;
+ h+=`<h3 class="s">③ Must-learn: say it first, then tap</h3><div class="fls">${ch.flip.map(f=>`<div class="fl" onclick="this.classList.toggle('open')"><b>${F(f[0])}</b><span>${F(f[1])}</span><em>Tap to check</em></div>`).join("")}</div>`;
+ h+=`<h3 class="s">④ Self-check (work on your own)</h3>`+ch.mcq.map((q,j)=>`<div class="q" id="q${cur}_${j}"><p><i>Q${j+1}</i> ${F(q[0])}</p>${q[1].map((o,k)=>`<button class="opt" onclick="pick(${j},${k})">${F(o)}</button>`).join("")}<button class="rv" onclick="rev(${j})">Reveal answer</button><div class="ex">${F(q[3])}</div></div>`).join("");
+ h+=`<h3 class="s">⑤ Think and write, then check your answer</h3>`+ch.oq.map((q,j)=>`<div class="q"><p><i>W${j+1}</i> ${F(q[0])}</p><button class="rv always" onclick="this.nextElementSibling.classList.toggle('show')">Show model answer</button><div class="ex">${F(q[1])}</div></div>`).join("");
+ document.getElementById("panel").innerHTML=h;if(ch.slider)sld();
+ ch.mcq.forEach((q,j)=>{if(res[cur+"_"+j]!==undefined)shown(j,res[cur+"_"+j]===1?q[2]:-1)});
+ pts=[...document.querySelectorAll("#panel .pt")];show(tm?0:pts.length)}
+function sld(){const v=+document.getElementById("en").value,r=document.getElementById("rs");document.getElementById("ev").textContent=v+" kJ mol⁻¹";
+ const ok=v>=100;r.textContent=ok?"Energy ≥ Ea: the collision CAN react (if the orientation is right)":"Energy < Ea: the particles bounce apart, no reaction";r.style.background=ok?"#e6f7ec":"#fdeaea";r.style.color=ok?"#14532d":"#7f1d1d"}
+function shown(j,sel){const q=CH[cur].mcq[j],el=document.getElementById("q"+cur+"_"+j);
+ el.querySelectorAll(".opt").forEach((b,k)=>{b.classList.remove("pick");if(k===q[2])b.classList.add("ok");else if(k===sel)b.classList.add("no")});el.querySelector(".ex").classList.add("show")}
+function pick(j,k){const q=CH[cur].mcq[j],key=cur+"_"+j;
+ if(tm){document.querySelectorAll("#q"+cur+"_"+j+" .opt").forEach((b,i)=>b.classList.toggle("pick",i===k));return}
+ if(res[key]!==undefined)return;res[key]=k===q[2]?1:0;shown(j,k);tally()}
+function rev(j){shown(j,-1)}
+function show(n){step=Math.max(0,Math.min(pts.length,n));pts.forEach((p,i)=>p.classList.toggle("vis",i<step));
+ document.getElementById("cnt").textContent=step+" / "+pts.length;if(tm&&step>0)pts[step-1].scrollIntoView({block:"center",behavior:"smooth"})}
+function go(d){show(d===99?pts.length:d===-99?0:step+d)}
+function sel(i){cur=i;render();window.scrollTo(0,0)}
+document.getElementById("tmb").onclick=()=>{tm=!tm;document.body.classList.toggle("tm",tm);document.getElementById("tmb").textContent=tm?"✖ Exit teacher mode":"👩‍🏫 Teacher mode (online class)";render()};
+document.addEventListener("keydown",e=>{if(!tm)return;if(["ArrowRight","ArrowDown"," "].includes(e.key)){e.preventDefault();go(1)}if(["ArrowLeft","ArrowUp"].includes(e.key)){e.preventDefault();go(-1)}});
+render();tally();
+</script>
+</body>
+</html>
